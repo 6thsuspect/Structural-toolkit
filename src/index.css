@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f4f1ea;
+  --foreground: #1c1917;
+  --panel: #fffdf8;
+  --muted: #78716c;
+  --border: #e7e0d4;
+  --primary: #0f766e;
+  --secondary: #1e3a5f;
+  --accent: #c2410c;
+  --danger: #b91c1c;
+  --grid: #d6d3d1;
+  --ok: #047857;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #0b1220;
+  --foreground: #e8eef7;
+  --panel: #121a2b;
+  --muted: #94a3b8;
+  --border: #243049;
+  --primary: #2dd4bf;
+  --secondary: #93c5fd;
+  --accent: #fb923c;
+  --danger: #f87171;
+  --grid: #1e293b;
+  --ok: #34d399;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--muted) 55%, transparent);
+  border-radius: 999px;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
+.field-input {
+  @apply w-full rounded-md border bg-background px-3 py-2 text-sm outline-none transition;
+}
+
+.field-input:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 28%, transparent);
+  border-color: var(--primary);
+}
+
+.kbd {
+  @apply rounded border border-border bg-panel px-1.5 py-0.5 font-mono text-[11px];
+}
